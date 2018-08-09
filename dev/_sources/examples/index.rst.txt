@@ -97,6 +97,26 @@ Examples of using a variety of MetPy's functionality together.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="The MetPy function `metpy.interpolate.cross_section` can obtain a cross-sectional slice through...">
+
+.. only:: html
+
+    .. figure:: /examples/images/thumb/sphx_glr_cross_section_thumb.png
+
+        :ref:`sphx_glr_examples_cross_section.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/cross_section
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The MetPy function `mpcalc.isentropic_interpolation` allows for isentropic analysis from model ...">
 
 .. only:: html
@@ -511,6 +531,7 @@ Examples using MetPy's various specialty plotting routines.
 .. only :: html
 
  .. container:: sphx-glr-footer
+    :class: sphx-glr-footer-gallery
 
 
   .. container:: sphx-glr-download

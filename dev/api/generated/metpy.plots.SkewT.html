@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>SkewT &mdash; MetPy 0.7</title>
+  <title>SkewT &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="plots" href="metpy.plots.html"/>
         <link rel="next" title="StationPlot" href="metpy.plots.StationPlot.html"/>
         <link rel="prev" title="Hodograph" href="metpy.plots.Hodograph.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -143,6 +143,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.ctables.html">ctables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.interpolate.html">interpolate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.gridding.html">gridding</a></li>
 </ul>
 </li>
@@ -247,7 +248,7 @@ plot functions (e.g. <em class="xref py py-obj">axvline</em>)</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v2.2.2)"><em>matplotlib.figure.Figure</em></a><em>, </em><em>optional</em>) – Source figure to use for plotting. If none is given, a new
 <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a> instance will be created.</li>
-<li><strong>rotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em>, </em><em>optional</em>) – Controls the rotation of temperature relative to horizontal. Given
+<li><strong>rotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Controls the rotation of temperature relative to horizontal. Given
 in degrees counterclockwise from x-axis. Defaults to 30 degrees.</li>
 <li><strong>subplot</strong> (tuple[int, int, int] or <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.SubplotSpec.html#matplotlib.gridspec.SubplotSpec" title="(in Matplotlib v2.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.gridspec.SubplotSpec</span></code></a> instance, optional) – Controls the size/position of the created subplot. This allows creating
 the skewT as part of a collection of subplots. If subplot is a tuple, it
@@ -308,7 +309,7 @@ can be created by using <a class="reference external" href="https://matplotlib.o
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>fig</strong> (<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v2.2.2)"><em>matplotlib.figure.Figure</em></a><em>, </em><em>optional</em>) – Source figure to use for plotting. If none is given, a new
 <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure" title="(in Matplotlib v2.2.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">matplotlib.figure.Figure</span></code></a> instance will be created.</li>
-<li><strong>rotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.6)"><em>int</em></a><em>, </em><em>optional</em>) – Controls the rotation of temperature relative to horizontal. Given
+<li><strong>rotation</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.7)"><em>int</em></a><em>, </em><em>optional</em>) – Controls the rotation of temperature relative to horizontal. Given
 in degrees counterclockwise from x-axis. Defaults to 30 degrees.</li>
 <li><strong>subplot</strong> (tuple[int, int, int] or <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.gridspec.SubplotSpec.html#matplotlib.gridspec.SubplotSpec" title="(in Matplotlib v2.2.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.gridspec.SubplotSpec</span></code></a> instance, optional) – Controls the size/position of the created subplot. This allows creating
 the skewT as part of a collection of subplots. If subplot is a tuple, it
@@ -369,11 +370,11 @@ barbs in a vertical line, located as a function of pressure.</p>
 <li><strong>u</strong> (<em>array_like</em>) – U (East-West) component of wind</li>
 <li><strong>v</strong> (<em>array_like</em>) – V (North-South) component of wind</li>
 <li><strong>c</strong> – An optional array used to map colors to the barbs</li>
-<li><strong>xloc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em>, </em><em>optional</em>) – Position for the barbs, in normalized axes coordinates, where 0.0
+<li><strong>xloc</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Position for the barbs, in normalized axes coordinates, where 0.0
 denotes far left and 1.0 denotes far right. Defaults to far right.</li>
-<li><strong>x_clip_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em>, </em><em>optional</em>) – Space, in normalized axes coordinates, to leave before clipping
+<li><strong>x_clip_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Space, in normalized axes coordinates, to leave before clipping
 wind barbs in the x-direction. Defaults to 0.08.</li>
-<li><strong>y_clip_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.6)"><em>float</em></a><em>, </em><em>optional</em>) – Space, in normalized axes coordinates, to leave above/below plot
+<li><strong>y_clip_radius</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.7)"><em>float</em></a><em>, </em><em>optional</em>) – Space, in normalized axes coordinates, to leave above/below plot
 before clipping wind barbs in the y-direction. Defaults to 0.08.</li>
 <li><strong>plot_units</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">pint.unit</span></code>) – Units to plot in (performing conversion if necessary). Defaults to given units.</li>
 <li><strong>kwargs</strong> – Other keyword arguments to pass to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.barbs.html#matplotlib.pyplot.barbs" title="(in Matplotlib v2.2.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">barbs()</span></code></a></li>
@@ -633,7 +634,7 @@ buoyancy.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Aug 09, 2018 at 00:55:13.
 
     </p>
   </div>
@@ -670,7 +671,7 @@ buoyancy.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+74.gef22931',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Station Plot with Layout &mdash; MetPy 0.7</title>
+  <title>Station Plot with Layout &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="MetPy Examples" href="../index.html"/>
         <link rel="next" title="MetPy Tutorials" href="../../tutorials/index.html"/>
         <link rel="prev" title="Station Plot" href="Station_Plot.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -201,7 +201,10 @@
             
                 
                 
-                <a href="https://github.com/Unidata/MetPy/issues/new?title=Suggested%20improvement%20for%20examples/plots/Station_Plot_with_Layout&body=Please%20describe%20what%20could%20be%20improved%20about%20this%20page%20or%20the%20typo/mistake%20that%20you%20found%3A"
+                
+                    
+                
+                <a href="https://github.com/Unidata/MetPy/edit/master/docs/../examples/plots/Station_Plot_with_Layout.py"
                    class="fa fa-github"> Improve this page</a>
             
         
@@ -215,7 +218,11 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="station-plot-with-layout">
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Click <a class="reference internal" href="#sphx-glr-download-examples-plots-station-plot-with-layout-py"><span class="std std-ref">here</span></a> to download the full example code</p>
+</div>
+<div class="sphx-glr-example-title section" id="station-plot-with-layout">
 <span id="sphx-glr-examples-plots-station-plot-with-layout-py"></span><h1>Station Plot with Layout<a class="headerlink" href="#station-plot-with-layout" title="Permalink to this headline">¶</a></h1>
 <p>Make a station plot, complete with sky cover and weather symbols, using a
 station plot layout built into MetPy.</p>
@@ -231,7 +238,7 @@ of a station plot.</p>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
-<span class="kn">from</span> <span class="nn">metpy.calc</span> <span class="kn">import</span> <a href="../../api/generated/metpy.calc.get_wind_components.html#metpy.calc.get_wind_components" title="View documentation for metpy.calc.get_wind_components"><span class="n">get_wind_components</span></a>
+<span class="kn">from</span> <span class="nn">metpy.calc</span> <span class="kn">import</span> <a href="../../api/generated/metpy.calc.wind_components.html#metpy.calc.wind_components" title="View documentation for metpy.calc.wind_components"><span class="n">wind_components</span></a>
 <span class="kn">from</span> <span class="nn">metpy.cbook</span> <span class="kn">import</span> <span class="n">get_test_data</span>
 <span class="kn">from</span> <span class="nn">metpy.plots</span> <span class="kn">import</span> <span class="p">(</span><a href="../../api/generated/metpy.plots.add_metpy_logo.html#metpy.plots.add_metpy_logo" title="View documentation for metpy.plots.add_metpy_logo"><span class="n">add_metpy_logo</span></a><span class="p">,</span> <span class="n">simple_layout</span><span class="p">,</span> <a href="../../api/generated/metpy.plots.StationPlot.html#metpy.plots.StationPlot" title="View documentation for metpy.plots.StationPlot"><span class="n">StationPlot</span></a><span class="p">,</span>
                          <a href="../../api/generated/metpy.plots.StationPlotLayout.html#metpy.plots.StationPlotLayout" title="View documentation for metpy.plots.StationPlotLayout"><span class="n">StationPlotLayout</span></a><span class="p">,</span> <span class="n">wx_code_map</span><span class="p">)</span>
@@ -240,8 +247,8 @@ of a station plot.</p>
 </div>
 <div class="section" id="the-setup">
 <h2>The setup<a class="headerlink" href="#the-setup" title="Permalink to this headline">¶</a></h2>
-<p>First read in the data. We use <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html#numpy.loadtxt" title="(in NumPy v1.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code></a> to read in the data and use a structured
-<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.dtype</span></code></a> to allow different types for the various columns. This allows us to handle
+<p>First read in the data. We use <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.loadtxt.html#numpy.loadtxt" title="(in NumPy v1.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code></a> to read in the data and use a structured
+<a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dtype.html#numpy.dtype" title="(in NumPy v1.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.dtype</span></code></a> to allow different types for the various columns. This allows us to handle
 the columns with string data.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">get_test_data</span><span class="p">(</span><span class="s1">&#39;station_data.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">data_arr</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">),</span>
@@ -296,8 +303,8 @@ layout is expecting.</p>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the wind components, converting from m/s to knots as will be appropriate</span>
 <span class="c1"># for the station plot</span>
-<span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <a href="../../api/generated/metpy.calc.get_wind_components.html#metpy.calc.get_wind_components" title="View documentation for metpy.calc.get_wind_components"><span class="n">get_wind_components</span></a><span class="p">(</span><span class="n">data_arr</span><span class="p">[</span><span class="s1">&#39;wind_speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <a href="../../api/generated/metpy.units.html#metpy.units.units" title="View documentation for metpy.units.units"><span class="n">units</span></a><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">),</span>
-                           <span class="n">data_arr</span><span class="p">[</span><span class="s1">&#39;wind_dir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <a href="../../api/generated/metpy.units.html#metpy.units.units" title="View documentation for metpy.units.units"><span class="n">units</span></a><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
+<span class="n">u</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <a href="../../api/generated/metpy.calc.wind_components.html#metpy.calc.wind_components" title="View documentation for metpy.calc.wind_components"><span class="n">wind_components</span></a><span class="p">(</span><span class="n">data_arr</span><span class="p">[</span><span class="s1">&#39;wind_speed&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <a href="../../api/generated/metpy.units.html#metpy.units.units" title="View documentation for metpy.units.units"><span class="n">units</span></a><span class="p">(</span><span class="s1">&#39;m/s&#39;</span><span class="p">),</span>
+                       <span class="n">data_arr</span><span class="p">[</span><span class="s1">&#39;wind_dir&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="o">*</span> <a href="../../api/generated/metpy.units.html#metpy.units.units" title="View documentation for metpy.units.units"><span class="n">units</span></a><span class="o">.</span><span class="n">degree</span><span class="p">)</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;eastward_wind&#39;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;northward_wind&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span><span class="p">,</span> <span class="n">v</span>
 
 <span class="c1"># Convert the fraction value into a code of 0-8, which can be used to pull out</span>
@@ -356,7 +363,7 @@ Set up the map projection and set up a cartopy feature for state borders</p>
 <a href="http://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Station_Plot_with_Layout_001.png" class="align-center" src="../../_images/sphx_glr_Station_Plot_with_Layout_001.png" />
+<img alt="../../_images/sphx_glr_Station_Plot_with_Layout_001.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Station_Plot_with_Layout_001.png" />
 <p>or instead, a custom layout can be used:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Just winds, temps, and dewpoint, with colors. Dewpoint and temp will be plotted</span>
 <span class="c1"># out to Farenheit tenths. Extra data will be ignored</span>
@@ -402,9 +409,9 @@ Set up the map projection and set up a cartopy feature for state borders</p>
 <a href="http://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="View documentation for matplotlib.pyplot.show"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img alt="../../_images/sphx_glr_Station_Plot_with_Layout_002.png" class="align-center" src="../../_images/sphx_glr_Station_Plot_with_Layout_002.png" />
-<p><strong>Total running time of the script:</strong> ( 0 minutes  0.081 seconds)</p>
-<div class="sphx-glr-footer docutils container">
+<img alt="../../_images/sphx_glr_Station_Plot_with_Layout_002.png" class="sphx-glr-single-img" src="../../_images/sphx_glr_Station_Plot_with_Layout_002.png" />
+<p><strong>Total running time of the script:</strong> ( 0 minutes  0.091 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-plots-station-plot-with-layout-py">
 <div class="sphx-glr-download docutils container">
 <a class="reference download internal" href="../../_downloads/Station_Plot_with_Layout.py" download=""><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">Station_Plot_with_Layout.py</span></code></a></div>
 <div class="sphx-glr-download docutils container">
@@ -437,7 +444,7 @@ Set up the map projection and set up a cartopy feature for state borders</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Aug 09, 2018 at 00:55:13.
 
     </p>
   </div>
@@ -474,7 +481,7 @@ Set up the map projection and set up a cartopy feature for state borders</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+74.gef22931',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

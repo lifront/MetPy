@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>concatenate &mdash; MetPy 0.7</title>
+  <title>concatenate &mdash; MetPy 0.8</title>
   
 
   
@@ -43,7 +43,7 @@
         <link rel="index" title="Index"
               href="../../genindex.html"/>
         <link rel="search" title="Search" href="../../search.html"/>
-    <link rel="top" title="MetPy 0.7" href="../../index.html"/>
+    <link rel="top" title="MetPy 0.8" href="../../index.html"/>
         <link rel="up" title="units" href="metpy.units.html"/>
         <link rel="next" title="diff" href="metpy.units.diff.html"/>
         <link rel="prev" title="check_units" href="metpy.units.check_units.html"/> 
@@ -81,7 +81,7 @@
                 
                   <div class="version-dropdown">
                     <select class="version-list" id="version-list">
-                      <option value=''>0.7</option>
+                      <option value=''>0.8</option>
                       
                         
                           <option value="../latest">latest</option>
@@ -143,6 +143,7 @@
 <li class="toctree-l2"><a class="reference internal" href="metpy.calc.html">calc</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.html">plots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.plots.ctables.html">ctables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="metpy.interpolate.html">interpolate</a></li>
 <li class="toctree-l2"><a class="reference internal" href="metpy.gridding.html">gridding</a></li>
 </ul>
 </li>
@@ -228,7 +229,7 @@
 <dt id="metpy.units.concatenate">
 <code class="descclassname">metpy.units.</code><code class="descname">concatenate</code><span class="sig-paren">(</span><em>arrs</em>, <em>axis=0</em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/metpy/units.html#concatenate"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#metpy.units.concatenate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concatenate multiple values into a new unitized object.</p>
-<p>This is essentially a unit-aware version of <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.concatenate.html#numpy.concatenate" title="(in NumPy v1.14)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.concatenate</span></code></a>. All items
+<p>This is essentially a unit-aware version of <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.concatenate.html#numpy.concatenate" title="(in NumPy v1.15)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.concatenate</span></code></a>. All items
 must be able to be converted to the same units. If an item has no units, it will be given
 those of the rest of the collection, without conversion. The first units found in the
 arguments is used as the final output units.</p>
@@ -274,7 +275,7 @@ arguments is used as the final output units.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2017, MetPy Developers.
-      Last updated on May 17, 2018 at 19:42:17.
+      Last updated on Aug 09, 2018 at 00:55:13.
 
     </p>
   </div>
@@ -311,7 +312,7 @@ arguments is used as the final output units.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'0.7.0+262.g9879351',
+            VERSION:'0.8.0+74.gef22931',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
